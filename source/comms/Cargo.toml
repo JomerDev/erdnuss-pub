@@ -21,7 +21,7 @@ version             = "0.3"
 optional            = true
 
 [dependencies.embassy-time]
-version             = "0.2"
+version             = "0.3"
 features            = ["defmt", "defmt-timestamp-uptime"]
 
 [dependencies.futures]
