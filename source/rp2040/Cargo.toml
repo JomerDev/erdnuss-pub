@@ -21,7 +21,7 @@ version             = "0.1.0"
 features            = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"]
 
 [dependencies.embassy-time]
-version             = "0.2"
+version             = "0.3"
 features            = ["defmt", "defmt-timestamp-uptime"]
 
 [dependencies.rand_chacha]
