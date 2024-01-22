@@ -187,7 +187,7 @@ impl RawFrameSlice {
     /// ## Safety
     ///
     /// You must only ever call this once
-    pub(crate) unsafe fn from_static<const N: usize>(
+    pub unsafe fn from_static<const N: usize>(
         buf: &'static GroundedArrayCell<RawFrame, N>,
     ) -> Self {
         Self {
@@ -310,7 +310,7 @@ pub struct WireFrameBox {
 }
 
 impl WireFrameBox {
-    pub(crate) fn new_unchecked(fb: FrameBox) -> Self {
+    pub fn new_unchecked(fb: FrameBox) -> Self {
         Self { fb }
     }
 
