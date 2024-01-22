@@ -49,6 +49,8 @@ default = [
     "postcard-rpc-helpers",
 ]
 
+logger-logging = []
+
 # Helpers for creating postcard-rpc formatted messages
 # on the wire
 postcard-rpc-helpers = [
