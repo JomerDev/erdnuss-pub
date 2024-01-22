@@ -10,7 +10,17 @@ macro_rules! nut_log {
     (println, $($arg:expr),*) => { defmt::println!($($arg),*) };
 }
 
-#[cfg(not(feature = "defmt-logging"))]
+#[cfg(feature = "logger-logging")]
+macro_rules! nut_log {
+    (trace,   $($arg:expr),*) => { log::trace!($($arg),*) };
+    (debug,   $($arg:expr),*) => { log::debug!($($arg),*) };
+    (info,    $($arg:expr),*) => { log::info!($($arg),*) };
+    (warn,    $($arg:expr),*) => { log::warn!($($arg),*) };
+    (error,   $($arg:expr),*) => { log::error!($($arg),*) };
+    (println, $($arg:expr),*) => { log::println!($($arg),*) };
+}
+
+#[cfg(all(not(feature = "defmt-logging"), not(feature = "logger-logging")))]
 macro_rules! nut_log {
     ($level:ident, $($arg:expr),*) => {{ $( let _ = $arg; )* }}
 }
