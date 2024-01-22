@@ -76,7 +76,7 @@ impl<const N: usize> FrameStorage<N> {
 /// Setting freelen to zero represents giving up exclusive access to the
 /// contents of the data field.
 #[repr(C)]
-pub(crate) struct RawFrame {
+pub struct RawFrame {
     data: [u8; 255],
     freelen: AtomicU8,
 }
